@@ -10,6 +10,7 @@ class Expense(Person):
         self.date = ""
         self.numberOfItems = 0
         self.goods = {}
+        self.allGoods = {}
     def inputPurchase(self):
         self.numberOfItems = str(len(self.goods) + 1)
         self.good = input("Name of good: ")
@@ -22,4 +23,10 @@ class Expense(Person):
         print(self.goods[f"item{self.numberOfItems}"][0])
         print(self.goods[f"item{self.numberOfItems}"][1])
         print(self.goods[f"item{self.numberOfItems}"][2])
+    def newCycle(self):
+        for i in self.goods:
+            self.allGoods[f"item{len(self.allGoods)+1}"] = self.goods[f"{i}"][0], self.goods[f"{i}"][1], self.goods[f"{i}"][2]
+        self.goods = {}
+        print(self.goods)
+        print(self.allGoods)
     
