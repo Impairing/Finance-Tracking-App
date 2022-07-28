@@ -1,8 +1,19 @@
 from income import *
-from contact import *
+from information import *
+from expense import *
 
-chris = Person("Christopher", "Liem", "908-972-3823")
 
-chrisIncome = Hourly("Christopher", "Liem", "908-972-3823", 12, 36)
+def purchase():
+    expenses = Expense()
+    expenses.inputPurchase()
+    expenses.displayPurchase()
 
-chrisIncome.expectedIncome()
+
+purchase()
+purchase()
+
+
+
+
+
+

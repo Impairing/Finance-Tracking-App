@@ -1,4 +1,4 @@
-from contact import *
+from information import *
 print("Imported income.py")
 
 class Salary:
@@ -6,18 +6,17 @@ class Salary:
         self.salary = salary
         
         
-class Hourly(Person):
-    def __init__(self, first, last, phone, wage, hours):
-        super().__init__(first, last, phone)
-        self.wage = wage
-        self.hours = hours
-        self.income = hours * wage
-        
-    def hourlyPay(self):
-        print(f"{self.first}'s hourly pay is ${self.wage}/hr")
-        
-    def hoursWorked(self):
-        print(f"{self.get_full_name()} is working {self.hours} hrs this week")
-        
-    def expectedIncome(self):
-        print(f"{self.get_full_name()}'s expected income is ${self.income} this week.")
+class Hourly():
+    def __init__(self):
+        self.hours = 0
+        self.pay = 0
+        self.totalIncome = 0
+    def enterIncome(self):
+        self.hours = int(input("Enter hours worked this week: "))
+        self.pay = int(input("Enter hourly wage: "))
+        self.totalIncome = self.pay * self.hours
+    def displayIncome(self):
+        print(f"You worked {self.hours} hours this week")
+        print(f"Your hourly wage is ${self.pay} per hour")
+        print(f"Your total income this week is ${self.totalIncome}")
+    
