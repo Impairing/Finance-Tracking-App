@@ -8,21 +8,18 @@ class Expense(Person):
         self.good = ""
         self.price = 0
         self.date = ""
-        self.goods = []
-        self.prices = []
-        self.dates = []
+        self.numberOfItems = 0
+        self.goods = {}
     def inputPurchase(self):
+        self.numberOfItems = str(len(self.goods) + 1)
         self.good = input("Name of good: ")
-        self.goods.append(self.good)
-        self.price = int(input("Price of good: "))
-        self.prices.append(self.price)
+        self.price = input("Price of good: ")
         self.date = input("Date of purchase: ")
-        self.dates.append(self.date)
+        self.goods[f"item{self.numberOfItems}"] = self.good, self.price, self.date
     def displayPurchase(self):
         print(f"You purchased {self.good} for ${self.price} on {self.date}")
         print(self.goods)
-        print(self.prices)
-        print(self.dates)
-        
-        
+        print(self.goods[f"item{self.numberOfItems}"][0])
+        print(self.goods[f"item{self.numberOfItems}"][1])
+        print(self.goods[f"item{self.numberOfItems}"][2])
     
