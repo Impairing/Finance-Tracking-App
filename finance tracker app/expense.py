@@ -1,13 +1,16 @@
 from income import *
 from information import *
+from datetime import datetime
+
 print("Imported expense.py")
+
 
 
 class Expense(Person):
     def __init__(self):
         self.good = ""
         self.price = 0
-        self.date = ""
+        self.date =  datetime.now().strftime("%A, %B %d, %Y")
         self.numberOfItems = 0
         self.goods = {}
         self.allGoods = {}
@@ -15,7 +18,6 @@ class Expense(Person):
         self.numberOfItems = str(len(self.goods) + 1)
         self.good = input("Name of good: ")
         self.price = input("Price of good: ")
-        self.date = input("Date of purchase: ")
         self.goods[f"item{self.numberOfItems}"] = self.good, self.price, self.date
     def displayPurchase(self):
         print(f"You purchased {self.good} for ${self.price} on {self.date}")
@@ -29,4 +31,6 @@ class Expense(Person):
         self.goods = {}
         print(self.goods)
         print(self.allGoods)
+        # print("Date:", self.date)
+
     

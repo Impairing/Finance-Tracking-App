@@ -2,9 +2,11 @@ from income import *
 from information import *
 from expense import *
 
+#creating objects
 person = Person()
 expenses = Expense()
 paycheck = Hourly()
+
 #testing thing
 def information():
     person.getInformation()
