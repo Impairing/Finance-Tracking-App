@@ -5,7 +5,7 @@ from expense import *
 person = Person()
 expenses = Expense()
 paycheck = Hourly()
-#testing thing
+
 def information():
     person.getInformation()
     person.displayInformation()
@@ -30,10 +30,10 @@ def newCyclism():
 
 purchase()
 purchase()
-newCyclism()
 purchase()
-purchase()
+expenses.spentWeekly()
 newCyclism()
+expenses.spentWeekly()
 
 
 
